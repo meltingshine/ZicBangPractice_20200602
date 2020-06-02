@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.example.zicbangpractice_20200602.R
 import com.example.zicbangpractice_20200602.datas.Room
 import org.w3c.dom.Text
+import kotlin.math.floor
 
 class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter<Room>(context,resId,list){
 
@@ -25,6 +26,7 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
         val row = tempRow!!
 
         //일단 변수 값 넣어주는거지 여기서 들어가는건 아니다.
+        //변수에다가 TextView 이름을 갖다 넣어준거 앞으로는 변수에 넣으면 그 TextView에도 들어감
 
         val priceTxt = row.findViewById<TextView>(R.id.priceTxt)
         val addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
@@ -33,9 +35,15 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
         val data = mList[position]
 
 
-        //이제 들어갈꺼야
+        // 데이터를 어떻게 갖고 와야 해야하나...
 
         descTxt.text = data.description
+
+        priceTxt.text = data.getFormattedPrice()
+
+        addressAndFloorTxt.text = "${data.address}, ${data.getFormmatedFloor()}"
+
+
         return row
 
     }
