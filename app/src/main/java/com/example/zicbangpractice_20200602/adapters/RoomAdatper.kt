@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
+import android.widget.TextView
 import com.example.zicbangpractice_20200602.R
 import com.example.zicbangpractice_20200602.datas.Room
+import org.w3c.dom.Text
 
 class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter<Room>(context,resId,list){
 
@@ -22,8 +24,18 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
         }
         val row = tempRow!!
 
+        //일단 변수 값 넣어주는거지 여기서 들어가는건 아니다.
+
+        val priceTxt = row.findViewById<TextView>(R.id.priceTxt)
+        val addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
+        val descTxt = row.findViewById<TextView>(R.id.descTxt)
+
+        val data = mList[position]
 
 
+        //이제 들어갈꺼야
+
+        descTxt.text = data.description
         return row
 
     }
