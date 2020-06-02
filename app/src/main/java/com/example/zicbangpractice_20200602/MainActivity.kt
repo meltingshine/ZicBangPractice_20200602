@@ -11,11 +11,3 @@ class MainActivity : BaseActivity() {
     }
 }
 
-abstract class BaseActivity : AppCompatActivity()  {
-
-    val mContext = this
-
-    abstract fun setupEvents()
-    abstract fun setupValues()
-
-}
