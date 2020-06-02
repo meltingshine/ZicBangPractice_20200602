@@ -1,6 +1,5 @@
 package com.example.zicbangpractice_20200602
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.zicbangpractice_20200602.adapters.RoomAdapter
 import com.example.zicbangpractice_20200602.datas.Room
@@ -12,12 +11,17 @@ class MainActivity : BaseActivity() {
 //    lateinit var roomAdapter : RoomAdapter
 
     val roomArrayList = ArrayList<Room>()
-    
+    lateinit var myAdapater: RoomAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupEvents()
         setValues()
+
+//        studentAdapter = StudentAdapter(mContext,R.layout.student_list_item,students)
+//        studentListView.adapter = studentAdapter
+
     }
 
     override fun setupEvents() {
@@ -26,6 +30,8 @@ class MainActivity : BaseActivity() {
 
     override fun setValues() {
         addRooms()
+        myAdapater = RoomAdapter(mContext,R.layout.room_list_item,roomArrayList)
+        roomListView.adapter = myAdapater
     }
 
     fun addRooms(){

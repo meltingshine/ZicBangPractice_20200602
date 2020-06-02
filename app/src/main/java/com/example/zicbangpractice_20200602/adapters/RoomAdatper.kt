@@ -21,6 +21,9 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
             tempRow = inf.inflate(R.layout.room_list_item, null)
         }
         val row = tempRow!!
+
+
+
         return row
 
     }
