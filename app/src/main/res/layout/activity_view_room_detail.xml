@@ -105,4 +105,10 @@
         android:layout_height="1dp"
         android:background="#CFCFCF"/>
 
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="여기입니다 여깅에여"/>
+
 </LinearLayout>
