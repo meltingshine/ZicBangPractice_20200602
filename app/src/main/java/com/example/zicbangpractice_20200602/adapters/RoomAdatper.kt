@@ -20,9 +20,14 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var tempRow = convertView
-        if (tempRow == null) {
+
+        tempRow.let{
+//null이 아닐때 실행
+        }.let {
+//            null일때 실행
             tempRow = inf.inflate(R.layout.room_list_item, null)
         }
+
         val row = tempRow!!
 
         //일단 변수 값 넣어주는거지 여기서 들어가는건 아니다.
