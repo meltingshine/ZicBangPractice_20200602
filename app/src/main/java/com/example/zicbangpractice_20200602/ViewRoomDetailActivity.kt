@@ -12,12 +12,18 @@ class ViewRoomDetailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_room_detail)
+        setupEvents()
+        setValues()
+
     }
 
     override fun setupEvents() {
         //Serializable로 한걸로 데이터로 뽑아보자
         mRoom = intent.getSerializableExtra("roomData")as Room //Room으로 받아오자
         descTxt.text = mRoom.description //descTxt 고를때 잘 골라야함.
+        priceTxt.text = mRoom.getFormattedPrice()
+        addressTxt.text = mRoom.address
+        floorTxt.text = mRoom.getFormmatedFloor()
 
     }
 
